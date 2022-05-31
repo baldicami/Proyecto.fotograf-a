@@ -20,7 +20,6 @@ body{
     "galeriaIndex galeriaIndex"
     "footInd footInd";
 }
-
 .header{
     background-color: rgba(210, 202, 209, 0.196);
     margin-top: 15px;
@@ -35,18 +34,15 @@ body{
 .nombre {
     font-size: 4.2rem;
     margin-left: 2.5rem;
-
 }
 h1 a{
     text-decoration: none;
     color: black;
 }
-
 .menu ul {
     list-style-type: none;
     display: inline-block;
     align-items: center;
-
 }
 li{
     display: inline-block;
@@ -58,7 +54,6 @@ a{
     display: inline-block;
     color: black;
     text-align: center;
-
 }
 a:hover{
     color: hwb(240 44% 44%);
@@ -68,10 +63,12 @@ a:hover{
     margin-top: 20px;
 }
 .galeriaIndex div{
+    width: auto;
+    margin: auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin: 6px;
+    margin: 5px;
     justify-content: center;
     align-content: center;
 }
@@ -86,7 +83,7 @@ a:hover{
     transition: height 1.1s, width 1.1s;
 }
 .galeriaIndex div img:hover{
-    width: 600px;
+    width: 580px;
 }
 .footInd{
     grid-area: footInd;
@@ -162,6 +159,8 @@ nav .menu {
     text-align: center;
 }
 .contenedorPhotos{
+    width: 100%;
+    margin: auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr auto auto;
@@ -178,11 +177,12 @@ nav .menu {
     font-size: 1.3rem;
 }    
 .gal{
+    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 20px 0px 20px 0px;
+    margin: auto;
 }
 .gal img{
     margin-bottom: 5px;
@@ -192,7 +192,7 @@ nav .menu {
     transition: height 1.1s, width 1.1s;
 }
 .galeriaPhotos div img:hover{
-    width: 600px;
+    width: 570px;
 }
 .galAle, .galHol{
     display: flex;
@@ -223,7 +223,7 @@ nav .menu {
     margin: 15px;
     font-size: 0.9rem;
 }
-@media screen and (max-width:852px){
+@media screen and (max-width:850px){
     .contenedorIndex{
         grid-template-columns: 1fr;
         grid-template-rows: auto;
