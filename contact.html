@@ -7,34 +7,69 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sen&family=Space+Mono&display=swap" rel="stylesheet">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style2.css">
     <title>Contact me</title>
 </head>
-<body >
-    <div class="bodyContact">
-        <header class="header">
-            <h1 class="nombre">
-                <a href="index.html">NAME</a>
-            </h1>
-            <nav>
-                <div class="menu">
-                    <ul >
-                        <li> 
-                            <a href="about.html">About</a>
+<body class="bodyContact">
+    <div class="container">
+        <header class="row header">
+            <div class="col-lg-6 col-md-12 col-sm-12">   
+                <h1 class="nombre mx-auto py-auto fs-1">
+                    <a href="index.html">NAME</a>
+                </h1>
+            </div>
+                <div class="menu col-lg-6 col-md-12 col-sm-12">
+                    <ul class="nav justify-content-end">
+                        <li class="nav-item py-auto mx-auto"> 
+                            <a class="nav-link fs-4" href="about.html">About</a>
                         </li>
-                        <li>
-                            <a href="photos.html">Photos</a>
+                        <li class="nav-item py-auto mx-auto">
+                            <a class="nav-link fs-4" href="photos.html">Photos</a>
                         </li>
                     </ul>
                 </div>
-            </nav>
+            </div>
         </header>
         <main class="mainContact">
-        <div>
-            <h2>
-                Contact me
-            </h2>
-            <form action="" class="formulario">
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-8 col-sm-8 p-5 justify-content-end">
+                <div class="fs-2">   
+                    <h3>
+                        Contact me
+                    </h3>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label fs-5">Nombre</label>
+                    <input class="form-control" id="exampleFormControlInput1" placeholder="">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label fs-5">E-mail</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Comentarios</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                    <button type="submit" class="btn btn-light my-2">Enviar</button>
+                  </div>
+            </div>
+            <div class="redes col-lg-4 col-md-8 col-sm-8">
+                <ul>
+                    <li>
+                        <img class="my-3 mx-2" src="./css/Fotos/logoFace.png" alt="facebook" width="40px"><a class="my-3 mr-2" href="www.facebook.com/nameyapellido" target="_blank">www.facebook.com/nyapellido</a>
+                    </li>
+                    <li>
+                        <img class="my-3 mr-2" src="./css/Fotos/logoInsta.png" alt="Instagram" width="40px">
+                        <a class="my-3 mr-2" href="https://www.instagram.com/nameyapellido" target="_blank">@nameyapellido</a>
+                    </li>
+                    <li>
+                        <img class="my-3 mr-2" src="./css/Fotos/logotwi.jpg" alt="Twitter" width="40px">
+                        <a class="my-3 mr-2" href="https://twitter.com/nameyapellido" target="_blank">@nameyapellido</a>
+                    </li>
+                </ul>
+            </div>
+            <!--<form action="" class="formulario">
                 <div>
                     <label for="nombre">Name:</label> 
                     <input type="text" name="nombre" required>
@@ -50,28 +85,14 @@
                 <div>
                     <input type="submit" value="Send">
                 </div>
-            </form>
+            </form> -->
         </div>
-        <div class="redes">
-            <ul>
-                <li>
-                    <img src="./css/Fotos/logoFace.png" alt="facebook" width="40px">
-                    <a href="www.facebook.com/nameyapellido" target="_blank">www.facebook.com/nameyapellido</a>
-                </li>
-                <li>
-                    <img src="./css/Fotos/logoInsta.png" alt="Instagram" width="40px">
-                    <a href="https://www.instagram.com/nameyapellido" target="_blank">@nameyapellido</a>
-                </li>
-                <li>
-                    <img src="./css/Fotos/logotwi.jpg" alt="Twitter" width="40px">
-                    <a href="https://twitter.com/nameyapellido" target="_blank">@nameyapellido</a>
-                </li>
-            </ul>
-        </div>
+        
     </main>
     <footer>
-
     </footer>
     </div>
+        <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 </html>
