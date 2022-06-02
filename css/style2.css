@@ -55,6 +55,9 @@ body{
     .redes ul{
         padding-top: 0.5rem;
     }
+    .bodyAbout{
+        background-attachment: fixed;
+    }
     }
 /*
 .header{
