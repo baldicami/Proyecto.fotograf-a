@@ -81,8 +81,6 @@ a:hover{
 .galeriaIndex{
     grid-area: galeriaIndex;
     margin-top: 20px;
-}
-.galeriaIndex{
     width: 90%;
     margin: auto;
     padding: auto;
@@ -96,7 +94,6 @@ a:hover{
     display: flex;
     width: 58%;
     margin: 1rem auto 0.5rem auto;
-
     text-align: center;
     justify-content: center;
     align-items: center;
