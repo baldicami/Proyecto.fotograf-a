@@ -47,6 +47,8 @@ body{
         .menu{
             list-style-type: none;
             display: inline-block;
+            flex-direction: row;
+            flex-wrap: wrap;
             align-items: center;
             li{
                 display: inline-block;
@@ -96,10 +98,18 @@ body{
             justify-content: center;
             align-content: center;
             img{
-                margin: 0px 0px 4px 4px;
+                margin: 3px;
                 transition: height 1.1s, width 1.1s;
                 &:hover{
                     width: 480px;
+                }
+            }
+            @media screen and (max-width:768px){
+                img{
+                    transition: none;
+                    &:hover{
+                        width: 100%;
+                    }
                 }
             }
         }
@@ -164,11 +174,7 @@ footer{
         justify-content: center;
         align-items: center;
         img{
-            margin: 5px;
-            transition: height 1.1s, width 1.1s;
-            &:hover{
-                width: 580px;
-            }
+            margin: 2.5px;
         }
     }
 }
@@ -261,6 +267,9 @@ footer{
                     input{
                         width: 100%;
                     }
+                    textarea{
+                        width: 100%;
+                    }
                 }
             }
         }
@@ -287,3 +296,102 @@ footer{
         }
     }
 }
+
+@media screen and (max-width:768px){
+    .header, .contenedorIndex .header, .contenedorAbout .header, .contenedorPhotos .header, .contenedorContact .header{
+      margin-top: 10px;
+      height: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: auto;}
+    .header nav .menu{
+        display: flex;
+        justify-content: center;
+    }
+    .contenedorIndex{
+      width: 100%;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      grid-template-areas: 
+      "header"
+      "galeriaIndex"
+      "footer";
+    }
+    .contenedorIndex main .galeriaIndex{
+        width: 100%;
+        padding: 3px;
+    }
+    .contenedorIndex main .galeriaIndex img{
+        transition: none;
+        width: 100%;
+        &:hover{
+            width: 100%;
+        }
+    }
+    .bodyContact .contenedorContact{
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr auto;
+      grid-template-areas: 
+      "header"
+      "mainContact";
+      background-attachment: fixed;}
+    .bodyContact .contenedorContact .mainContact{
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 1.3rem;
+    }
+    .bodyContact .contenedorContact .mainContact div .h3{
+      text-align: center;
+      font-size: 1.2rem;
+    }  
+    .bodyContact .contenedorContact .mainContact div .formulario{
+      width: 350px;
+    }
+    
+    .bodyContact .contenedorContact .mainContact div .formulario textarea{
+      width: 303px;
+    }
+    .bodyContact .contenedorContact .mainContact .redes{
+      margin: 1rem 0.5rem 1rem 0.5rem;
+    }
+    .bodyContact .contenedorContact .mainContact .redes .redes ul{
+      display: flex;
+      align-items: center;
+    }
+    .bodyContact .contenedorContact .mainContact .redes ul li img{
+      width: 40px;
+      margin-right: 3px;
+    }
+    .bodyAbout .contenedorAbout{
+      width: 100%;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 2fr;
+      grid-template-areas: 
+      "header"
+      "mainAbout";
+    }
+    .bodyAbout .contenedorAbout .mainAbout p{
+      padding: 1.6rem;
+      justify-content: center;
+      width: auto;
+    }
+    .bodyPhotos .contenedorPhotos{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto auto;
+    grid-template-areas: 
+    "header"
+    "galeriaPhotos"
+    "footer";
+    }
+    .bodyPhotos .contenedorPhotos .galeriaPhotos {
+        padding: 3px;
+    }
+    .bodyPhotos .contenedorPhotos .galeriaPhotos img{
+        width: 100% ;
+    }
+    }
