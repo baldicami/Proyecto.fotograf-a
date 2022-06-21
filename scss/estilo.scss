@@ -1,7 +1,7 @@
 $colorletrahover: hwb(240 44% 44%);
-$fondoIndex: rgb(249, 249, 249);
-$fondoAbout: url(./Fotos/img391.jpg);
-$fondoContact: url(./Fotos/img736.jpg);
+$fondoIndexPhoto: white;
+$fondoAbout: url(./Fotos/Uruguay-puertoColonia.jpg);
+$fondoContact: url(./Fotos/Uruguay-cielo.jpg);
 
 *{
     margin:0%;
@@ -16,8 +16,9 @@ $fondoContact: url(./Fotos/img736.jpg);
     background-size: cover;
 }
 body{
-    @include fondos ($fondoIndex);
+    @include fondos ($fondoIndexPhoto);
 }
+
 .header{
     background-color: rgba(210, 202, 209, 0.196);
     width: 100%;
@@ -29,8 +30,9 @@ body{
     align-items: center;
     grid-area: header;
     .nombre{
-        font-size: 3rem;
         margin-left: 2.5rem;
+        font-size: 2rem;
+        font-weight: 500;
         a{
             text-decoration: none;
             display: inline-block;
@@ -69,7 +71,7 @@ body{
     grid-template-areas: 
     "header header header"
     "galeriaIndex galeriaIndex galeriaIndex"
-    "footInd footInd footInd";
+    "footer footer footer";
     .header{
         @extend .header;
     }
@@ -102,21 +104,23 @@ body{
             }
         }
     }
-    .footInd{
-        grid-area: footInd;
-        text-align: center;
+}
+footer{
+    grid-area: footer;
+    text-align: center;
+    margin: 15px;
+    a{
         margin: 15px;
-        a{
-            margin: 15px;
-            font-size: 0.9rem;
-            color: black;
-            text-decoration: none;
-            &:hover{
-                font-weight: bold;
-            }
+        font-size: 0.9rem;
+        color: black;
+        text-decoration: none;
+        &:hover{
+            font-weight: bold;
+            color: black
         }
     }
 }
+
 .bodyAbout{
     @include fondos ($fondoAbout);
 }
@@ -144,6 +148,78 @@ body{
         }
     }
 }
+
+.gal{
+    .pais{
+        text-align: center;
+        font-size: 1.3rem;
+        margin: 1rem;
+    }
+    .fotos{
+        width: 100%;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        img{
+            margin: 5px;
+            transition: height 1.1s, width 1.1s;
+            &:hover{
+                width: 580px;
+            }
+        }
+    }
+}
+.bodyPhotos{
+    @include fondos ($fondoIndexPhoto);
+}
+.contenedorPhotos{
+    width: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr auto auto;
+    grid-template-areas: 
+    "header header header"
+    "galeriaPhotos galeriaPhotos galeriaPhotos"
+    "footer footer footer";
+    .header{
+        @extend .header;
+    }
+    .galeriaPhotos{
+        grid-area: galeriaPhotos;
+        padding: 0%;
+        .galUru{
+            @extend .gal;
+        }
+        .galArg{
+            @extend .gal;
+        }
+        .galEEUU{
+            @extend .gal;
+        }
+        .galAle{
+            @extend .gal;
+            div{
+                display: flex;
+                flex-direction: column;
+            }
+        }
+        .galHol{
+            @extend .gal;
+            div{
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+    footer{
+        @extend footer;
+    }
+}
+
 .bodyContact{
     @include fondos ($fondoContact);
 }
@@ -173,7 +249,7 @@ body{
                 flex-direction: column;
                 justify-content: center;
                 padding: 1rem;
-                width: 370px;
+                width: 350px;
                 height: 440px;
                 padding: 1.3rem ;
                 border-style: solid;
@@ -211,6 +287,3 @@ body{
         }
     }
 }
-
-
-

@@ -7,10 +7,10 @@ body {
   font-family: 'Sen', sans-serif;
   font-family: 'Space Mono', monospace;
   color: black;
-  background-image: #f9f9f9;
+  background-image: white;
   background-size: cover; }
 
-.header, .contenedorIndex .header, .contenedorAbout .header, .contenedorContact .header {
+.header, .contenedorIndex .header, .contenedorAbout .header, .contenedorPhotos .header, .contenedorContact .header {
   background-color: rgba(210, 202, 209, 0.196);
   width: 100%;
   margin: 2rem auto 0rem auto;
@@ -21,8 +21,9 @@ body {
   align-items: center;
   grid-area: header; }
   .header .nombre {
-    font-size: 3rem;
-    margin-left: 2.5rem; }
+    margin-left: 2.5rem;
+    font-size: 2rem;
+    font-weight: 500; }
     .header .nombre a {
       text-decoration: none;
       display: inline-block;
@@ -49,7 +50,9 @@ body {
 .contenedorIndex {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  grid-template-areas: "header header header" "galeriaIndex galeriaIndex galeriaIndex" "footInd footInd footInd"; }
+  grid-template-areas: "header header header"
+ "galeriaIndex galeriaIndex galeriaIndex"
+ "footer footer footer"; }
   .contenedorIndex main .intro {
     display: flex;
     width: 58%;
@@ -73,30 +76,34 @@ body {
       transition: height 1.1s, width 1.1s; }
       .contenedorIndex main .galeriaIndex img:hover {
         width: 480px; }
-  .contenedorIndex .footInd {
-    grid-area: footInd;
-    text-align: center;
-    margin: 15px; }
-    .contenedorIndex .footInd a {
-      margin: 15px;
-      font-size: 0.9rem;
-      color: black;
-      text-decoration: none; }
-      .contenedorIndex .footInd a:hover {
-        font-weight: bold; }
+
+footer, .contenedorPhotos footer {
+  grid-area: footer;
+  text-align: center;
+  margin: 15px; }
+  footer a, .contenedorPhotos footer a {
+    margin: 15px;
+    font-size: 0.9rem;
+    color: black;
+    text-decoration: none; }
+    footer a:hover {
+      font-weight: bold;
+      color: black; }
 
 .bodyAbout {
   font-family: 'Sen', sans-serif;
   font-family: 'Space Mono', monospace;
   color: black;
-  background-image: url(./Fotos/img391.jpg);
-  background-size: cover; }
+  background-image: url(./Fotos/Uruguay-puertoColonia.jpg);
+  background-size: cover;
+background-attachment: fixed; }
 
 .contenedorAbout {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr 3fr;
-  grid-template-areas: "header header header" "mainAbout mainAbout none"; }
+  grid-template-areas: "header header header"
+ "mainAbout mainAbout none"; }
   .contenedorAbout .mainAbout {
     grid-area: mainAbout;
     display: flex;
@@ -108,18 +115,64 @@ body {
         width: 500px;
         text-align: center; }
 
+.gal .pais, .contenedorPhotos .galeriaPhotos .galUru .pais, .contenedorPhotos .galeriaPhotos .galArg .pais, .contenedorPhotos .galeriaPhotos .galEEUU .pais, .contenedorPhotos .galeriaPhotos .galAle .pais, .contenedorPhotos .galeriaPhotos .galHol .pais {
+  text-align: center;
+  font-size: 1.3rem;
+  margin: 1rem; }
+
+.gal .fotos, .contenedorPhotos .galeriaPhotos .galUru .fotos, .contenedorPhotos .galeriaPhotos .galArg .fotos, .contenedorPhotos .galeriaPhotos .galEEUU .fotos, .contenedorPhotos .galeriaPhotos .galAle .fotos, .contenedorPhotos .galeriaPhotos .galHol .fotos {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center; }
+  .gal .fotos img, .contenedorPhotos .galeriaPhotos .galUru .fotos img, .contenedorPhotos .galeriaPhotos .galArg .fotos img, .contenedorPhotos .galeriaPhotos .galEEUU .fotos img, .contenedorPhotos .galeriaPhotos .galAle .fotos img, .contenedorPhotos .galeriaPhotos .galHol .fotos img {
+    margin: 5px;
+    transition: height 1.1s, width 1.1s; }
+    .gal .fotos img:hover, .contenedorPhotos .galeriaPhotos .galUru .fotos img:hover, .contenedorPhotos .galeriaPhotos .galArg .fotos img:hover, .contenedorPhotos .galeriaPhotos .galEEUU .fotos img:hover, .contenedorPhotos .galeriaPhotos .galAle .fotos img:hover, .contenedorPhotos .galeriaPhotos .galHol .fotos img:hover {
+      width: 580px; }
+
+.bodyPhotos {
+  font-family: 'Sen', sans-serif;
+  font-family: 'Space Mono', monospace;
+  color: black;
+  background-image: white;
+  background-size: cover; }
+
+.contenedorPhotos {
+  width: 100%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr auto auto;
+  grid-template-areas: "header header header"
+ "galeriaPhotos galeriaPhotos galeriaPhotos"
+ "footer footer footer"; }
+  .contenedorPhotos .galeriaPhotos {
+    grid-area: galeriaPhotos;
+    padding: 0%; }
+    .contenedorPhotos .galeriaPhotos .galAle div {
+      display: flex;
+      flex-direction: column; }
+    .contenedorPhotos .galeriaPhotos .galHol div {
+      display: flex;
+      flex-direction: column; }
+
 .bodyContact {
   font-family: 'Sen', sans-serif;
   font-family: 'Space Mono', monospace;
   color: black;
-  background-image: url(./Fotos/img736.jpg);
+  background-image: url(./Fotos/Uruguay-cielo.jpg);
   background-size: cover; }
 
 .contenedorContact {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr 3fr;
-  grid-template-areas: "header header header" "mainContact mainContact mainContact"; }
+  grid-template-areas: "header header header"
+ "mainContact mainContact mainContact"; }
   .contenedorContact .mainContact {
     grid-area: mainContact;
     width: 100%;
@@ -160,3 +213,166 @@ body {
           .contenedorContact .mainContact .redes ul li a:hover {
             color: hwb(240 44% 44%);
             font-weight: bold; }
+
+@media screen and (max-width:768px){
+.header, .contenedorIndex .header, .contenedorAbout .header, .contenedorPhotos .header, .contenedorContact .header{
+  margin-top: 9px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;}
+.contenedorIndex{
+  width: 100%;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: 
+  "header"
+  "galeriaIndex"
+  "footer";
+}
+.contenedorIndex .main .galeriaIndex img{
+  transition: none;
+  width: 100%;
+}
+.contenedorIndex .main .galeriaIndex img:hover{
+  width: 100%;
+}
+.bodyContact .contenedorContact{
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: 
+  "header"
+  "mainContact";
+  background-attachment: fixed;}
+.bodyContact .contenedorContact .mainContact{
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.3rem;
+}
+.bodyContact .contenedorContact .mainContact .div .h3{
+  text-align: center;
+  font-size: 1.2rem;
+}  
+.bodyContact .contenedorContact .mainContact .div .formulario{
+  width: 100px;
+}
+.bodyContact .contenedorContact .mainContact .redes{
+  margin: 1rem 0.5rem 1rem 0.5rem;
+}
+.bodyContact .contenedorContact .mainContact .redes .redes ul{
+  display: flex;
+  align-items: center;
+}
+.bodyContact .contenedorContact .mainContact .redes .redes ul .redes li img{
+  margin-right: 8px;
+}
+.bodyAbout .contenedorAbout{
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 2fr;
+  grid-template-areas: 
+  "header"
+  "mainAbout";
+}
+.bodyAbout .contenedorAbout .mainAbout p{
+  padding: 1.6rem;
+  justify-content: center;
+  width: auto;
+}
+
+}
+            
+
+            /*
+            @media screen and (max-width:768px){
+
+              .contenedorIndex{
+                  width: 100%;
+                  grid-template-columns: 1fr;
+                  grid-template-rows: auto;
+                  grid-template-areas: 
+                  "header"
+                  "galeriaIndex"
+                  "footInd";
+              }
+              .galeriaIndex img{
+                  transition: none;
+                  width: 100%;
+              }
+              .galeriaIndex img:hover{
+                  width: 100%;
+              }
+              .header{
+                  margin-top: 9px;
+                  height: 100px;
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  align-items: center;
+                  height: auto;
+              }
+              .menu{
+                  display: flex;
+                  flex-wrap: wrap;
+                  margin: 0rem;
+                  justify-content: center;
+                  font-size: 1rem;
+                  width: 100%;
+              }
+              .nombre{
+                  margin: 0rem;
+                  text-align: center;
+                  font-size: 3rem;
+              }  
+              .bodyAbout{
+                  grid-template-columns: 1fr;
+                  grid-template-rows: 1fr 3.1fr;
+                  grid-template-areas: 
+                  "header"
+                  "mainAbout";
+              }
+              .mainAbout p{
+                  padding: 1.6rem;
+                  justify-content: center;
+              }
+              .galAle{
+                  flex-direction: column;
+              }
+              .contenedorContact{
+                  grid-template-columns: 1fr;
+                  grid-template-rows: 1fr auto;
+                  grid-template-areas: 
+                  "header"
+                  "mainContact";
+                  background-attachment: fixed;
+              }
+              .mainContact{
+                  flex-direction: column;
+                  justify-content: center;
+                  align-items: center;
+                  margin-top: 1.3rem;
+              }
+              .redes{
+                  margin: 1rem 0.5rem 1rem 0.5rem;
+              }
+              .redes ul{
+                  display: flex;
+                  align-items: center;
+              }
+              .redes li img{
+                  margin-right: 8px;
+              }
+              .mainContact div h2{
+                  text-align: center;
+                  font-size: 1.2rem;
+              }
+              .galeriaPhotos img{
+                  transition: none;
+                  width: 100%;
+              }
+              .galeriaPhotos div img:hover{
+                  width: 100%;
+              }
+          }
