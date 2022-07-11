@@ -10,7 +10,7 @@ body {
   background-image: white;
   background-size: cover; }
 
-.header, .contenedorIndex .header, .contenedorAbout .header, .contenedorPhotos .header, .contenedorContact .header {
+header, .contenedorIndex header, .bodyAbout .contenedorAbout .header, .contenedorPhotos header, .contenedorContact header {
   background-color: rgba(210, 202, 209, 0.196);
   width: 100%;
   margin: 2rem auto 0rem auto;
@@ -20,32 +20,31 @@ body {
   justify-content: space-between;
   align-items: center;
   grid-area: header; }
-  .header .nombre {
+  header .nombre, .bodyAbout .contenedorAbout .header .nombre {
     margin-left: 2.5rem;
     font-size: 2rem;
     font-weight: 500; }
-    .header .nombre a {
+    header .nombre a, .bodyAbout .contenedorAbout .header .nombre a {
       text-decoration: none;
-      display: inline-block;
       color: black; }
-      .header .nombre a:hover {
+      header .nombre a:hover, .bodyAbout .contenedorAbout .header .nombre a:hover {
         color: hwb(240 44% 44%);
         font-weight: bold; }
-  .header nav .menu {
+  header nav .menu, .bodyAbout .contenedorAbout .header nav .menu {
     list-style-type: none;
     display: inline-block;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center; }
-    .header nav .menu li {
+    header nav .menu li, .bodyAbout .contenedorAbout .header nav .menu li {
       display: inline-block;
       margin: 1rem;
       font-size: 1.5rem; }
-      .header nav .menu li a {
+      header nav .menu li a, .bodyAbout .contenedorAbout .header nav .menu li a {
         text-decoration: none;
         display: inline-block;
         color: black; }
-        .header nav .menu li a:hover {
+        header nav .menu li a:hover, .bodyAbout .contenedorAbout .header nav .menu li a:hover {
           color: hwb(240 44% 44%);
           font-weight: bold; }
 
@@ -56,7 +55,7 @@ body {
   .contenedorIndex main .intro {
     display: flex;
     width: 58%;
-    margin: 1rem auto 0.5rem auto;
+    margin: 2rem auto 0.5rem auto;
     text-align: center;
     justify-content: center;
     align-items: center; }
@@ -101,22 +100,40 @@ footer, .contenedorPhotos footer {
   color: black;
   background-image: url(./Fotos/Uruguay-puertoColonia.jpg);
   background-size: cover; }
-
-.contenedorAbout {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr 3fr;
-  grid-template-areas: "header header header" "mainAbout mainAbout none"; }
-  .contenedorAbout .mainAbout {
-    grid-area: mainAbout;
+  .bodyAbout .contenedorAbout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 2fr auto;
+    grid-template-areas: "header  header" "mainAbout  none" "footer  footer"; }
+    .bodyAbout .contenedorAbout .mainAbout {
+      grid-area: mainAbout;
+      display: flex;
+      justify-content: center; }
+      .bodyAbout .contenedorAbout .mainAbout div {
+        justify-content: end; }
+        .bodyAbout .contenedorAbout .mainAbout div p {
+          padding: 2rem;
+          width: 500px;
+          text-align: center; }
+  .bodyAbout footer {
     display: flex;
-    justify-content: center; }
-    .contenedorAbout .mainAbout div {
-      justify-content: end; }
-      .contenedorAbout .mainAbout div p {
-        padding: 2rem;
-        width: 500px;
-        text-align: center; }
+    justify-content: center;
+    align-items: center; }
+    .bodyAbout footer ul li {
+      margin: 1.5rem 1.5rem;
+      display: inline-block;
+      list-style: none;
+      justify-content: center; }
+      .bodyAbout footer ul li img {
+        margin-right: 0.1rem;
+        border-radius: 20%; }
+      .bodyAbout footer ul li a {
+        text-decoration: none;
+        color: black;
+        padding-bottom: 10px; }
+        .bodyAbout footer ul li a:hover {
+          color: hwb(240 44% 44%);
+          font-weight: bold; }
 
 .gal .pais, .contenedorPhotos .galeriaPhotos .galUru .pais, .contenedorPhotos .galeriaPhotos .galArg .pais, .contenedorPhotos .galeriaPhotos .galEEUU .pais, .contenedorPhotos .galeriaPhotos .galAle .pais, .contenedorPhotos .galeriaPhotos .galHol .pais {
   text-align: center;
@@ -133,6 +150,9 @@ footer, .contenedorPhotos footer {
   align-items: center; }
   .gal .fotos img, .contenedorPhotos .galeriaPhotos .galUru .fotos img, .contenedorPhotos .galeriaPhotos .galArg .fotos img, .contenedorPhotos .galeriaPhotos .galEEUU .fotos img, .contenedorPhotos .galeriaPhotos .galAle .fotos img, .contenedorPhotos .galeriaPhotos .galHol .fotos img {
     margin: 2.5px; }
+  .gal .fotos div, .contenedorPhotos .galeriaPhotos .galUru .fotos div, .contenedorPhotos .galeriaPhotos .galArg .fotos div, .contenedorPhotos .galeriaPhotos .galEEUU .fotos div, .contenedorPhotos .galeriaPhotos .galAle .fotos div, .contenedorPhotos .galeriaPhotos .galHol .fotos div {
+    display: flex;
+    flex-direction: column; }
 
 .bodyPhotos {
   font-family: 'Sen', sans-serif;
@@ -151,12 +171,27 @@ footer, .contenedorPhotos footer {
   .contenedorPhotos .galeriaPhotos {
     grid-area: galeriaPhotos;
     padding: 0%; }
-    .contenedorPhotos .galeriaPhotos .galAle div {
+    .contenedorPhotos .galeriaPhotos .atajo {
+      margin: 2rem auto 2rem auto;
       display: flex;
-      flex-direction: column; }
-    .contenedorPhotos .galeriaPhotos .galHol div {
-      display: flex;
-      flex-direction: column; }
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around; }
+      .contenedorPhotos .galeriaPhotos .atajo li {
+        display: inline-block;
+        list-style-type: none;
+        margin: 5px;
+        padding: 3px; }
+        .contenedorPhotos .galeriaPhotos .atajo li:hover {
+          background-color: rgba(210, 202, 209, 0.196);
+          border-radius: 5%; }
+        .contenedorPhotos .galeriaPhotos .atajo li a {
+          text-decoration: none;
+          color: black;
+          padding: 3px; }
+    @media screen and (max-width: 768px) {
+      .contenedorPhotos .galeriaPhotos .bodyPhotos .contenedorPhotos .galeriaPhotos .galAle .fotos div img {
+        width: 100%; } }
 
 .bodyContact {
   font-family: 'Sen', sans-serif;
@@ -181,23 +216,14 @@ footer, .contenedorPhotos footer {
       .contenedorContact .mainContact div h3 {
         margin: 0.5rem; }
       .contenedorContact .mainContact div .formulario {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
         padding: 1rem;
         width: 350px;
-        height: 440px;
-        padding: 1.3rem;
+        height: 435px;
         border-style: solid;
         border-radius: 5%;
         border-color: #eff195; }
         .contenedorContact .mainContact div .formulario div {
-          width: 100%;
           margin: 2px; }
-          .contenedorContact .mainContact div .formulario div input {
-            width: 100%; }
-          .contenedorContact .mainContact div .formulario div textarea {
-            width: 100%; }
     .contenedorContact .mainContact .redes {
       display: flex;
       align-items: center; }
@@ -205,7 +231,8 @@ footer, .contenedorPhotos footer {
         margin: 1.5rem 1.5rem;
         list-style: none; }
         .contenedorContact .mainContact .redes ul li img {
-          margin-right: 0.5rem; }
+          margin-right: 0.5rem;
+          border-radius: 20%; }
         .contenedorContact .mainContact .redes ul li a {
           text-decoration: none;
           color: black; }
@@ -214,7 +241,7 @@ footer, .contenedorPhotos footer {
             font-weight: bold; }
 
 @media screen and (max-width: 768px) {
-  .header, .contenedorIndex .header, .contenedorAbout .header, .contenedorPhotos .header, .contenedorContact .header, .contenedorIndex .header, .contenedorAbout .header, .contenedorPhotos .header, .contenedorContact .header {
+  header, .contenedorIndex header, .bodyAbout .contenedorAbout .header, .contenedorPhotos header, .contenedorContact header, .contenedorIndex header, .contenedorIndex .bodyAbout .contenedorAbout .header, .bodyAbout .contenedorAbout .contenedorIndex .header, .contenedorAbout header, .bodyAbout .contenedorAbout .header, .contenedorPhotos .bodyAbout .contenedorAbout .header, .bodyAbout .contenedorAbout .contenedorPhotos .header, .contenedorPhotos header, .contenedorContact .bodyAbout .contenedorAbout .header, .bodyAbout .contenedorAbout .contenedorContact .header, .contenedorContact header {
     margin-top: 10px;
     height: 100px;
     display: flex;
@@ -222,7 +249,7 @@ footer, .contenedorPhotos footer {
     justify-content: center;
     align-items: center;
     height: auto; }
-  .header nav .menu {
+  header nav .menu, .bodyAbout .contenedorAbout .header nav .menu {
     display: flex;
     justify-content: center; }
   .contenedorIndex {
@@ -257,21 +284,22 @@ footer, .contenedorPhotos footer {
     width: 303px; }
   .bodyContact .contenedorContact .mainContact .redes {
     margin: 1rem 0.5rem 1rem 0.5rem; }
-  .bodyContact .contenedorContact .mainContact .redes .redes ul {
+  .bodyContact .contenedorContact .mainContact .redes .redes ul li {
     display: flex;
     align-items: center; }
   .bodyContact .contenedorContact .mainContact .redes ul li img {
-    width: 40px;
-    margin-right: 3px; }
+    width: 40px; }
   .bodyAbout .contenedorAbout {
     width: 100%;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 2fr;
-    grid-template-areas: "header" "mainAbout"; }
+    grid-template-rows: 1fr 2fr auto;
+    grid-template-areas: "header" "mainAbout" "footer"; }
   .bodyAbout .contenedorAbout .mainAbout p {
     padding: 1.6rem;
     justify-content: center;
     width: auto; }
+  .socialm {
+    display: none; }
   .bodyPhotos .contenedorPhotos {
     width: 100%;
     display: grid;
@@ -280,5 +308,5 @@ footer, .contenedorPhotos footer {
     grid-template-areas: "header" "galeriaPhotos" "footer"; }
   .bodyPhotos .contenedorPhotos .galeriaPhotos {
     padding: 3px; }
-  .bodyPhotos .contenedorPhotos .galeriaPhotos img {
+  .bodyPhotos .contenedorPhotos .galeriaPhotos .fotos img {
     width: 100%; } }
